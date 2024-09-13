@@ -54,7 +54,7 @@ npm init -y
 4. Install dependency
 
 ```bash
-npm install express mongoose dotenv helmet cors express-validator
+npm install express mongoose dotenv helmet cors express-validator morgan
 ```
 
 5. Development dependencies:

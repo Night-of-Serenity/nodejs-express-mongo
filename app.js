@@ -2,6 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const morgan = require("morgan");
 const productRoutes = require("./src/routes/productRoutes");
 const rateLimit = require("express-rate-limit");
 const connectDB = require("./config/db");
@@ -25,6 +26,9 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(limiter); // Apply rate limiter to all requests
+
+// Request logging using morgan
+app.use(morgan("combined")); // You can change the format as needed
 
 // Connect to MongoDB
 connectDB(); // Call the MongoDB connection function
