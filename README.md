@@ -30,6 +30,10 @@ nodejs-mongo-crud/
    └── server.js                 # Server startup
 ```
 
+## ERD
+
+![Diagram](ERD/ERD.png)
+
 ## Project Setup
 
 1. Create .env file
