@@ -4,6 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const productRoutes = require("./src/routes/productRoutes");
+const cartRoutes = require("./src/routes/cartRoutes");
 const rateLimit = require("express-rate-limit");
 const connectDB = require("./config/db");
 const notFound = require("./src/middlewares/notFound");
@@ -35,6 +36,7 @@ connectDB(); // Call the MongoDB connection function
 
 // Routes
 app.use("/api/products", productRoutes);
+app.use("/api/cart", cartRoutes);
 
 // Not found middleware (should be after all valid routes)
 app.use(notFound);
