@@ -3,31 +3,36 @@
 ## Project Structure
 
 ```plaintext
-nodejs-mongo-crud/
+   nodejs-mongo-crud/
    ├── config/
-   │   └── db.js               # MongoDB connection setup
+   │   └── db.js                 # MongoDB connection setup
    ├── src/
    │   ├── controllers/
-   │   │   └── productController.js  # Controller for handling product CRUD logic
+   │   │   ├── cartController.js  # Controller for handling cart logic
+   │   │   └── productController.js # Controller for handling product logic
    │   ├── middlewares/
-   │   │   ├── validate.js          # Middleware for validating incoming requests
-   │   │   ├── errorHandler.js      # Centralized error handler middleware
-   │   │   ├── notFound.js          # Middleware for handling 404 Not Found errors
-   │   │   └── validateObjectId.js  # Middleware for validating MongoDB ObjectId
+   │   │   ├── errorHandler.js    # Centralized error handler middleware
+   │   │   ├── notFound.js        # Middleware for handling 404 Not Found errors
+   │   │   └── validateResult.js  # Middleware for validating incoming requests
    │   ├── models/
-   │   │   └── productModel.js  # Mongoose schema and model for Product
+   │   │   ├── cartModel.js       # Mongoose schema and model for Cart
+   │   │   └── productModel.js    # Mongoose schema and model for Product
    │   ├── routes/
-   │   │   └── productRoutes.js  # Product routes definition
+   │   │   ├── cartRoutes.js      # Cart routes definition
+   │   │   └── productRoutes.js   # Product routes definition
    │   ├── services/
-   │   │   └── productService.js  # Service layer for handling business logic
+   │   │   ├── cartService.js     # Service layer for handling cart-related business logic
+   │   │   └── productService.js  # Service layer for handling product-related business logic
    │   └── validators/
-   │       └── productValidator.js # Validators for product creation and updates
-   ├── .env                     # Environment variables
-   ├── docker-compose.yml        # Docker Compose for MongoDB setup
-   ├── package.json              # Project dependencies and scripts
-   ├── README.md                 # Project documentation
-   ├── app.js                    # Express app setup
-   └── server.js                 # Server startup
+   │       ├── cartValidator.js   # Validators for cart operations (add, update, remove item)
+   │       └── productValidator.js # Validators for product operations
+   ├── .env                       # Environment variables
+   ├── docker-compose.yml          # Docker Compose for MongoDB setup
+   ├── nodejs_example.postman_collection.json # Postman api collection
+   ├── package.json                # Project dependencies and scripts
+   ├── README.md                   # Project documentation
+   ├── app.js                      # Express app setup
+   └── server.js                   # Server startup
 ```
 
 ## ERD
