@@ -43,11 +43,6 @@
 
 1. Create .env file
 
-```bash
-PORT=3000
-MONGO_URI=mongodb://root:example@localhost:27017/productdb?authSource=admin
-```
-
 2. Start Database
 
 ```bash
@@ -82,8 +77,4 @@ or
 
 ```bash
 npm start
-```
-
-```
-
 ```

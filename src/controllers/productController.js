@@ -1,3 +1,4 @@
+const { query } = require("express");
 const productService = require("../services/productService");
 
 exports.getAllProducts = async (req, res) => {
@@ -7,6 +8,7 @@ exports.getAllProducts = async (req, res) => {
 
 exports.createProduct = async (req, res) => {
   const { name, price, description } = req.body;
+
   const product = await productService.createProduct({
     name,
     price,
@@ -17,6 +19,9 @@ exports.createProduct = async (req, res) => {
 
 exports.getProductById = async (req, res) => {
   const product = await productService.getProductById(req.params.id);
+
+  const a = req.query.varA;
+  const b = req.query.varB;
   if (!product) return res.status(404).json({ message: "Product not found" });
   res.json(product);
 };
